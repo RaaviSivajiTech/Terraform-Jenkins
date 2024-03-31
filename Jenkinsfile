@@ -53,14 +53,14 @@ pipeline {
        
         stage('Destroy') {
             steps {
-                sh "echo ""destroying the resources"""
+                sh 'echo "destroying the resources"'
                 script{
                     if(params.ACCION == 'yes'){
                         sh "pwd;cd terraform/ ; terraform destroy -auto-approve"
                     }
                     else
                     {
-                        sh "echo ""resources destroyed sucessfully"""
+                        sh 'echo "resources destroyed sucessfully"'
                     }
                 }                
             }
