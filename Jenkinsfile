@@ -49,7 +49,7 @@ pipeline {
                 sh "pwd;cd terraform/ ; terraform apply -input=false tfplan"
             }
         }
-        stage('Approval') {
+        stage('Approvall') {
            when {
                not {
                    equals expected: true, actual: params.autoApprove
@@ -70,5 +70,4 @@ pipeline {
             }
         }
     }
-
   }
